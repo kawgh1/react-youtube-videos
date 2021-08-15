@@ -2,13 +2,36 @@
 
 ### Tools Used
 
-- **Semantic UI CDN**
+- #### Semantic UI CDN
 
     < link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
 
-- Youtube Data API v3
+- #### Youtube Data API v3
     - http://console.developers.google.com/
     - https://developers.google.com/youtube/v3/
+
+- #### Axios
+    - 3rd party package for handling API requests, beefed up version of fetch()
+    - **npm install --save axios**
+    - Example GET call to API with Unsplash authorization header and query param
+        
+        Ex)
+
+            state = {images: []};
+
+            onSearchSubmit = async (term) =>
+
+                // axios call
+                axios.get('https://api.unsplash.com/search/photos', {
+                    params: { query: term},
+                    headers: {
+                        Authorization: 'Client-ID jFsdf0As0910912HJ0hf0-9jhasd@lk'
+                    }
+                })
+
+                this.setState({ images: response.data.results });
+                
+            }
 
 
 ## Component Architecture
@@ -20,6 +43,7 @@
 ### Things I Learned
 
 #### - Handling API Keys using the .env file
+- https://lortza.github.io/2018/05/22/create-react-app-api-keys.html
 1. Create a file called .env in the root of your project’s directory.
 2. Inside the .env file, prepend REACT_APP_ to your API key name of choice and assign it.
 
