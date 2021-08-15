@@ -39,6 +39,13 @@
 ![App Component Diagram](https://github.com/kawgh1/react-youtube-videos/blob/main/app-component-heirarchy1.png)
 ![App Component Layout](https://github.com/kawgh1/react-youtube-videos/blob/main/component-layout.png)
 
+### Video Selector Callback Function
+![App-Architecture](https://github.com/kawgh1/react-youtube-videos/blob/main/component-arch.png)
+- 'selectedVideo' is stored in App this.state
+    - a method **'onVideoSelect()'** is passed down from App to Child Component **VideoList** and to VideoList's Child Component *VideoItem**
+        - When user selects a new video on the screen, that VideoItem calls the onVideoSelect callback function, which trickles up through Parent Component VideoList to App
+            - now we have a reference in App's this.state to the user selected video, which we will then display a larger thumbnail on the screen
+
 
 ### Notes
 
