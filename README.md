@@ -36,6 +36,7 @@
 
 ## Component Architecture
 ![App Component Diagram](https://github.com/kawgh1/react-youtube-videos/blob/main/app-component-heirarchy1.png)
+![App Component Layout](https://github.com/kawgh1/react-youtube-videos/blob/main/component-layout.png)
 
 
 ### Notes
