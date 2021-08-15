@@ -1,4 +1,5 @@
 ## Create React App for calling the Youtube API to return videos of things a user searched for
+- This was based off a course created by [Stephen Grider](https://www.udemy.com/course/react-redux/)
 
 ### Tools Used
 
