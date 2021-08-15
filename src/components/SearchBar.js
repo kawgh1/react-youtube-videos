@@ -1,4 +1,5 @@
 import React from 'react'
+import './SearchBar.css'
 
 class SearchBar extends React.Component {
 
@@ -18,7 +19,7 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-        <div className="search-bar ui segment">
+        <div className="search-bar ui segment search">
                 <form className="ui form" onSubmit={this.onFormSubmit}>
                     <div className="field">
                         <label>Video Search</label>
