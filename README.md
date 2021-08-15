@@ -1,6 +1,8 @@
 ## Create React App for calling the Youtube API to return videos of things a user searched for
 - This was based off a course created by [Stephen Grider](https://www.udemy.com/course/react-redux/)
 
+### To view the live site click [here](https://xenodochial-ptolemy-17e31f.netlify.app/)
+
 ### Tools Used
 
 - #### Semantic UI CDN
