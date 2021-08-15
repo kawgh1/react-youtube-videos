@@ -50,9 +50,51 @@
             - now we have a reference in App's this.state to the user selected video, which we will then display a larger thumbnail on the screen
 
 
-### Notes
+## Things I Added
+    - Styling, responsive mobile view using method shown below
 
-### Things I Learned
+## Things I Learned
+
+### Media Queries inside React
+
+    
+
+You can make media queries inside React:
+
+    import React, { Component } from 'react';
+
+    class App extends Component {
+
+        constructor(props) {
+            super(props)
+            this.state = { matches: window.matchMedia("(min-width: 768px)").matches };
+        }
+
+        componentDidMount() {
+            const handler = e => this.setState({matches: e.matches});
+            window.matchMedia("(min-width: 768px)").addListener(handler);
+        }
+
+        render() {
+            return (
+            <div>
+
+                {this.state.matches && (...<h1>Big Screen</h1>...)}
+
+                {!this.state.matches && (...<h3>Small Screen</h3>...)}
+
+            </div>
+            );
+        }
+
+    }
+
+    export default App;
+
+- https://stackoverflow.com/questions/54491645/media-query-syntax-for-reactjs
+    - from user: https://stackoverflow.com/users/1079908/ferit
+
+
 
 #### - Handling API Keys using the .env file
 - https://lortza.github.io/2018/05/22/create-react-app-api-keys.html

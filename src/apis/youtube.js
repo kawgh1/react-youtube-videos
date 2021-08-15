@@ -5,7 +5,7 @@ export default axios.create({
     params: {
         part: 'snippet',
         type: 'video',
-        maxResults: 5,
+        maxResults: 10,
         key: process.env.REACT_APP_YOUTUBE_API_KEY
     }
 });
