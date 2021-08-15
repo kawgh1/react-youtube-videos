@@ -3,7 +3,7 @@
 ### Tools Used
 
 
-![App Component Digram](https://github.com/kawgh1/react-youtube-videos/blob/main/app-component-heirarchy.png)
+![App Component Digram](https://github.com/kawgh1/react-youtube-videos/blob/main/app-component-heirarchy1.png)
 
 
 ### Notes
