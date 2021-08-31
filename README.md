@@ -44,7 +44,7 @@
 ![App Component Layout](https://github.com/kawgh1/react-youtube-videos/blob/main/component-layout.png)
 
 ## Things I Added
-    - Styling, responsive mobile view using method shown below
+- Styling, responsive mobile view using method shown below
 
 ## Things I Learned
 
@@ -54,22 +54,22 @@
     - If a Class Component uses no LifeCycle Methods -> no need for useEffect() hook
 
     - ## CUSTOM HOOKS
-    - To refactor JSX / View code -> make a new Component
-    - To refactor existing hooks, functions and logic -> make a Custom Hook
+        - To refactor JSX / View code -> make a new Component
+        - To refactor existing hooks, functions and logic -> make a Custom Hook
 
-    - In general, Custom Hooks are not concerned with displaying JSX
-    - Best way to create reusable code in a React project (besides Components!)
-    - Created by extrating hook-related code out of a Functional Component
-    - Custom hooks always make use of at least one primitive hook internally
-    - Each custom hook should have only one purpose (scope creep)
-    - Kind of an art
-    - Data-fetching is a great thing to try to make reusable
+        - In general, Custom Hooks are **not** concerned with displaying JSX
+        - Best way to create reusable code in a React project (besides Components!)
+        - Created by extracting hook-related code out of a Functional Component
+        - Custom hooks **always** make use of at least one primitive hook internally
+        - Each custom hook should have only **one purpose** (scope creep)
+        - Kind of an art
+        - Data-fetching is a great thing to try to make reusable
 
-    ## PROCESS FOR CREATING REUSABLE HOOKS
-    1. Identify each line of code related to some single purpose
-    2. Identify the inputs to that code
-    3. Identify the outputs to that code
-    4. Extract all the code into a separate function, receiving the inputs as arguments, and returning the outputs
+    - ## PROCESS FOR CREATING REUSABLE HOOKS
+        - **1). Identify each line of code related to some single purpose**
+        - **2). Identify the inputs to that code**
+        - **3). Identify the outputs to that code**
+        - **4). Extract all the code into a separate function, receiving the inputs as arguments, and returning the outputs**
 
 ### Media Queries inside React
 
