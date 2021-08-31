@@ -44,7 +44,7 @@
 ![App Component Layout](https://github.com/kawgh1/react-youtube-videos/blob/main/component-layout.png)
 
 ## Things I Added
-- Styling, responsive mobile view using method shown below
+- Styling, responsive mobile view using hooks
 
 ## Things I Learned
 
@@ -77,35 +77,32 @@
 
 You can make media queries inside React:
 
-    import React, { Component } from 'react';
+    import React, { useState, useEffect } from 'react';
 
-    class App extends Component {
+    const App = () => {
 
-        constructor(props) {
-            super(props)
-            this.state = { matches: window.matchMedia("(min-width: 768px)").matches };
-        }
+        ...
+        const [matches, setMatches] = useState(window.matchMedia("(min-width:768px)").matches);
 
-        componentDidMount() {
-            const handler = e => this.setState({matches: e.matches});
+        useEffect(() => {
+
+            const handler = e => setMatches({matches: e.matches});
             window.matchMedia("(min-width: 768px)").addListener(handler);
-        }
+            ...
+        }, []);
 
-        render() {
+
             return (
-            <div>
+                <div>
 
-                {this.state.matches && (...<h1>Big Screen</h1>...)}
+                    {matches && (...<h1>Big Screen</h1>...)}
 
-                {!this.state.matches && (...<h3>Small Screen</h3>...)}
+                    {!matches && (...<h3>Small Screen</h3>...)}
 
-            </div>
+                </div>
             );
+
         }
-
-    }
-
-    export default App;
 
 - https://stackoverflow.com/questions/54491645/media-query-syntax-for-reactjs
     - from user: https://stackoverflow.com/users/1079908/ferit
