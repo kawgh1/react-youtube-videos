@@ -83,13 +83,12 @@ You can make media queries inside React:
 
         ...
         const [matches, setMatches] = useState(window.matchMedia("(min-width:768px)").matches);
+        ...
 
-        useEffect(() => {
-
-            const handler = e => setMatches({matches: e.matches});
-            window.matchMedia("(min-width: 768px)").addListener(handler);
-            ...
-        }, []);
+        ...
+        const handler = e => setMatches({matches: e.matches});
+        window.matchMedia("(min-width: 768px)").addListener(handler);
+        ...
 
 
             return (
