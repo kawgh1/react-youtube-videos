@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import SearchBar from './SearchBar'
-import youtube from '../apis/youtube'
+// import youtube from '../apis/youtube'
+import useVideos from '../hooks/useVideos'
 import VideoList from './VideoList'
 import VideoDetail from './VideoDetail'
 import './App.css'
@@ -11,34 +12,23 @@ import './App.css'
 
 const App = () => {
 
-    const [videos, setVideos] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [matches, setMatches] = useState(window.matchMedia("(min-width:768px)").matches);
 
- 
-
+    // Custom Hook
+    const [videos, search] = useVideos('cats');
 
     useEffect(() => {
+        setSelectedVideo(videos[0]);
 
-        const handler = e => setMatches({matches: e.matches});
+    }, [videos]);
+
+ 
+    // check screen resolution for best display
+    const handler = e => setMatches({matches: e.matches});
         window.matchMedia("(min-width: 768px)").addListener(handler);
 
-        // default display cat videos
-        onTermSubmit('cats');
-    }, []);
-
-    const onTermSubmit = async (term) => {
-        // console.log(term);
-        const response = await youtube.get('/search', {
-        params: {
-            q: term // 'q' for query
-        }
-        });
-
-        setVideos(response.data.items);
-        setSelectedVideo(response.data.items[0]);
-        
-    };
+ 
 
     const onVideoSelect = (video) => {
 
@@ -61,7 +51,7 @@ const App = () => {
             {/* Display for Big screen > 768px */}
             {matches && (
                 <div className="ui container">
-                    <SearchBar onFormSubmit={onTermSubmit}/>
+                    <SearchBar onFormSubmit={search}/>
                     
                     <div className="ui grid">
                         <div className="ui row">
@@ -85,7 +75,7 @@ const App = () => {
             {/* Display for Small screen < 768px */}
             {!matches && (
                 <div className="ui container">
-                    <SearchBar onFormSubmit={onTermSubmit}/>
+                    <SearchBar onFormSubmit={search}/>
                     <div className="ui grid">
                         <div className="ui row container">
 
