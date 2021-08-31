@@ -43,19 +43,33 @@
 ![App Component Diagram](https://github.com/kawgh1/react-youtube-videos/blob/main/app-component-heirarchy1.png)
 ![App Component Layout](https://github.com/kawgh1/react-youtube-videos/blob/main/component-layout.png)
 
-### Video Selector Callback Function
-![App-Architecture](https://github.com/kawgh1/react-youtube-videos/blob/main/component-arch.png)
-### Deeply Nested Callbacks
-- 'selectedVideo' is stored in App this.state
-    - a method **'onVideoSelect()'** is passed down from App to Child Component **VideoList** and to VideoList's Child Component *VideoItem**
-        - When user selects a new video on the screen, that VideoItem calls the onVideoSelect callback function, which trickles up through Parent Component VideoList to App
-            - now we have a reference in App's this.state to the user selected video, which we will then display a larger thumbnail on the screen
-
-
 ## Things I Added
     - Styling, responsive mobile view using method shown below
 
 ## Things I Learned
+
+### Custom Hooks
+- #### Refactoring / Design
+    - If a Class Component has State defined -> refactor it into a Functional Component with useState() hook
+    - If a Class Component uses no LifeCycle Methods -> no need for useEffect() hook
+
+    - ## CUSTOM HOOKS
+    - To refactor JSX / View code -> make a new Component
+    - To refactor existing hooks, functions and logic -> make a Custom Hook
+
+    - In general, Custom Hooks are not concerned with displaying JSX
+    - Best way to create reusable code in a React project (besides Components!)
+    - Created by extrating hook-related code out of a Functional Component
+    - Custom hooks always make use of at least one primitive hook internally
+    - Each custom hook should have only one purpose (scope creep)
+    - Kind of an art
+    - Data-fetching is a great thing to try to make reusable
+
+    ## PROCESS FOR CREATING REUSABLE HOOKS
+    1. Identify each line of code related to some single purpose
+    2. Identify the inputs to that code
+    3. Identify the outputs to that code
+    4. Extract all the code into a separate function, receiving the inputs as arguments, and returning the outputs
 
 ### Media Queries inside React
 
